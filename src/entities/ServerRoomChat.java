@@ -1,9 +1,10 @@
 package entities;
 
 import interfaces.IServerRoomChat;
+import java.rmi.AlreadyBoundException;
+import java.rmi.RemoteException;
 import java.rmi.registry.Registry;
 import java.rmi.registry.LocateRegistry;
-import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
@@ -18,17 +19,17 @@ public class ServerRoomChat implements IServerRoomChat {
 
             // Bind the remote object's stub in the registry
             Registry registry = LocateRegistry.getRegistry();
-            registry.bind("Hello", stub);
+            registry.bind("IServerRoomChat", stub);
 
             System.err.println("Server ready");
-        } catch (Exception e) {
-            System.err.println("Server exception: " + e.toString());
-            e.printStackTrace();
+        } catch (AlreadyBoundException | RemoteException e) {
+            System.err.println("Server exception: " + e.getMessage());
         }
     }
     
     public ServerRoomChat() {
         roomList = new ArrayList<>();
+        roomList.add(new RoomChat("TesteRoom 1"));
     }
 
     @Override
@@ -42,4 +43,6 @@ public class ServerRoomChat implements IServerRoomChat {
         roomList.add(roomChat);
     }
 
+    
+    
 }
