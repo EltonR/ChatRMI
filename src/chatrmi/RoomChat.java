@@ -8,10 +8,6 @@ public class RoomChat implements IRoomChat {
     private String roomName;
     private ArrayList<UserChat> userList;
 
-    public static void main(String[] args) {
-
-    }
-
     public RoomChat(String roomName) {
         userList = new ArrayList<>();
         this.roomName = roomName;
