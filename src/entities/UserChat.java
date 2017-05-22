@@ -1,4 +1,4 @@
-package chatrmi;
+package entities;
 
 import interfaces.IUserChat;
 

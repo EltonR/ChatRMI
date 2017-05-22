@@ -1,4 +1,4 @@
-package chatrmi;
+package entities;
 
 import interfaces.IRoomChat;
 import java.util.ArrayList;

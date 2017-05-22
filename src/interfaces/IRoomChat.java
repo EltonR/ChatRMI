@@ -1,6 +1,8 @@
 package interfaces;
 
-public interface IRoomChat extends java.rmi.Remote{
+import java.rmi.Remote;
+
+public interface IRoomChat extends Remote{
     
     public void sendMsg(String usrName, String msg);
     public void joinRoom(String usrName);

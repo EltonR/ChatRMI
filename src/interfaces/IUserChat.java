@@ -1,6 +1,8 @@
 package interfaces;
 
-public interface IUserChat extends java.rmi.Remote{
+import java.rmi.Remote;
+
+public interface IUserChat extends Remote{
     
     public void deliverMsg(String senderName, String msg);
     
